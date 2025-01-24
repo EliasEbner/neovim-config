@@ -110,6 +110,9 @@ vim.opt.expandtab = true -- Whether to use spaces instead of tabs or not
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- in some cases it is useful to have this
+vim.keymap.set({'n', 'v', 'i'}, '<C-c>', '<Esc>', {noremap = true, silent = true})
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -138,6 +141,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Easier keybind to open explorers
 vim.keymap.set('n', '<leader>x', '<cmd>Ex<CR>')
+
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -176,9 +180,12 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+--
+--
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'andymass/vim-matchup', -- I mainly use this to jump from opening html tag to closing tag
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -204,9 +211,34 @@ require('lazy').setup({
       },
     },
   },
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
+        filetypes = { "html" , "xml" },
+      }
+    },
+  },
 
   'jose-elias-alvarez/null-ls.nvim',
   'alvan/vim-closetag',
+
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    lazy = false,
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 
   {
     'm4xshen/autoclose.nvim',
@@ -618,9 +650,6 @@ require('lazy').setup({
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -812,6 +841,8 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+  -- show function parameters while typing them
+  'hrsh7th/cmp-nvim-lsp-signature-help',
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
