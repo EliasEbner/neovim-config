@@ -186,6 +186,49 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'andymass/vim-matchup', -- I mainly use this to jump from opening html tag to closing tag
+    {
+        'milanglacier/minuet-ai.nvim',
+        config = function()
+            require('minuet').setup {
+              notify='verbose',
+              request_timeout = 10,
+              virtualtext = {
+                auto_trigger_ft = {},
+                keymap = {
+                  -- accept whole completion
+                  accept = '<A-A>',
+                  -- accept one line
+                  accept_line = '<A-a>',
+                  -- accept n lines (prompts for number)
+                  accept_n_lines = '<A-z>',
+                  -- Cycle to prev completion item, or manually invoke completion
+                  prev = '<A-]>',
+                  -- Cycle to next completion item, or manually invoke completion
+                  -- next = '<leader>]',
+                  dismiss = '<A-e>',
+                },
+              },
+              provider = 'openai_fim_compatible',
+              n_completions = 1, -- recommend for local model for resource saving
+              -- I recommend you start with a small context window firstly, and gradually
+              -- increase it based on your local computing power.
+              context_window = 4096,
+              provider_options = {
+                openai_fim_compatible = {
+                  api_key = 'TERM',
+                  stream = true,
+                  name = 'Ollama',
+                  end_point = 'http://localhost:11434/v1/completions',
+                  model = 'qwen2.5-coder:7b',
+                  optional = {
+                    max_tokens = 2048,
+                    top_p = 0.9,
+                  },
+                },
+              },
+            }
+        end,
+    },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -443,11 +486,6 @@ require('lazy').setup({
   },
   { 'Bilal2453/luvit-meta', lazy = true },
   {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    opts = {},
-  },
-  {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -455,6 +493,7 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'pmizio/typescript-tools.nvim',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
