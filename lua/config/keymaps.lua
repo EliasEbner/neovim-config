@@ -32,7 +32,6 @@ vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, {
     desc = "Open the code actions menu."
 })
 
-
 ----------------------------- HARPOON -----------------------------
 -- ADD FILE TO HARPOON LIST
 vim.keymap.set("n", "<space>ha", function()
@@ -62,3 +61,17 @@ end)
 vim.keymap.set("n", "<space>hs", function()
     require("harpoon"):list():select(4)
 end)
+
+----------------------------- DIAGNOSTICS -----------------------------
+-- TOGGLE DIAGNOSTICS FLOATING WINDOW
+vim.keymap.set("n", "<space>d", function()
+    vim.diagnostic.open_float({
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        border = 'rounded',
+        prefix = '',
+        scope = 'cursor',
+    })
+end, {
+    desc = "Show diagnostics window."
+})
