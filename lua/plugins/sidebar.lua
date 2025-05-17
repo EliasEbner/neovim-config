@@ -1,7 +1,7 @@
 return {
     "sidebar-nvim/sidebar.nvim",
     opts = {
-        open = true,
+        open = false,
         files = {},
         bindings = {
             ["<space>s"] = function()
