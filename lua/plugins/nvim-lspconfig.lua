@@ -6,5 +6,6 @@ return {
         vim.lsp.enable("pyright")
         vim.lsp.enable("rust_analyzer")
         vim.lsp.enable("jdtls")
+        vim.lsp.enable("ts_ls")
     end
 }
