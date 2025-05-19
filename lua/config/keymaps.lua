@@ -30,7 +30,7 @@ vim.keymap.set("n", "gr", vim.lsp.buf.references, {
 })
 
 -- RENAME
-vim.keymap.set("n", "grn", vim.lsp.buf.rename, {
+vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {
     desc = "Rename symbol"
 })
 
