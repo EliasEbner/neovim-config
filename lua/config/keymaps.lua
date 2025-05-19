@@ -17,6 +17,11 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
     desc = "Go to the definition of the symbol under the cursor."
 })
 
+-- GO TO TYPE DEFINITION
+vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, {
+    desc = "Go to the definition of the type of the symbol under the cursor."
+})
+
 -- GO TO REFERENCES
 vim.keymap.set("n", "gr", vim.lsp.buf.references, {
     desc = "Show the references of the symbol under the cursor."
