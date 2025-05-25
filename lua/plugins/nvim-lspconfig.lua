@@ -11,5 +11,6 @@ return {
     vim.lsp.enable("eslint")
     vim.lsp.enable("html")
     vim.lsp.enable("emmet_language_server")
+    vim.lsp.enable("ltex")
   end
 }
