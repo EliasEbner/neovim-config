@@ -29,6 +29,7 @@ return {
     vim.lsp.enable("jdtls")
     vim.lsp.enable("ts_ls")
     -- vim.lsp.enable("tailwindcss")
+    vim.lsp.enable("tailwindcss")
     vim.lsp.enable("eslint")
     vim.lsp.enable("html")
     vim.lsp.enable("emmet_language_server")

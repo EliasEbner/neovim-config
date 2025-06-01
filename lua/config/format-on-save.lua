@@ -1,4 +1,5 @@
 vim.api.nvim_create_augroup('AutoFormatting', {})
+
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*.*',
   group = 'AutoFormatting',
@@ -19,5 +20,13 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     else
       vim.lsp.buf.format({ async = false })
     end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.ts", "*.tsx", "*.jsx", "*.json", "*.css", "*.scss", "*.md" },
+  group = vim.api.nvim_create_augroup("PrettierFormat", { clear = true }),
+  callback = function()
+    vim.cmd("Prettier")
   end,
 })
