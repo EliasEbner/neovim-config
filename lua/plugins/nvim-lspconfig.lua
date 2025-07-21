@@ -25,7 +25,15 @@ return {
 
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("pyright")
-    vim.lsp.enable("rust_analyzer")
+    vim.lsp.config("rust_analyzer", {
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            features = "all"
+          },
+        }
+      }
+    })
     vim.lsp.enable("jdtls")
     vim.lsp.enable("ts_ls")
     -- vim.lsp.enable("tailwindcss")
