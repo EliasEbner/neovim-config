@@ -4,11 +4,11 @@ return {
   config = function()
     -- for tailwindcss to work in rust leptos files
     local lspconfig = require("lspconfig")
-    
+
     lspconfig.tailwindcss.setup({
       filetypes = {
-        "html", "css", "javascript", "javascriptreact", 
-        "typescript", "typescriptreact", "rust"  -- Add rust here
+        "html", "css", "javascript", "javascriptreact",
+        "typescript", "typescriptreact", "rust" -- Add rust here
       },
       settings = {
         tailwindCSS = {
@@ -35,7 +35,8 @@ return {
       }
     })
     vim.lsp.enable("jdtls")
-    vim.lsp.enable("ts_ls")
+    -- I'm already using ts tools
+    -- vim.lsp.enable("ts_ls")
     -- vim.lsp.enable("tailwindcss")
     vim.lsp.enable("tailwindcss")
     vim.lsp.enable("eslint")
