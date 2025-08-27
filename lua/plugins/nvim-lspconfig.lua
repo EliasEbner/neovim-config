@@ -44,5 +44,6 @@ return {
     vim.lsp.enable("html")
     vim.lsp.enable("emmet_ls")
     vim.lsp.enable("ltex")
+    vim.lsp.enable("astro")
   end
 }
