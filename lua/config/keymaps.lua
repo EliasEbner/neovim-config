@@ -112,3 +112,16 @@ vim.keymap.set("n", "dc", function()
 end, {
   desc = "Open diff view"
 })
+
+
+----------------------------- TREESITTER -----------------------------
+-- TOGGLE HIGHLIGHTING
+vim.keymap.set("n", "<space>t", function()
+  if vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
+    vim.treesitter.stop()
+  else
+    vim.treesitter.start()
+  end
+end, {
+  desc = "Start treesitter highlighting"
+})
