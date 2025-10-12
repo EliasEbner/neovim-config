@@ -33,5 +33,7 @@ return {
     vim.lsp.enable("html")
     vim.lsp.enable("emmet_language_server")
     vim.lsp.enable("ltex")
+    vim.lsp.enable("sqlls")
+    vim.lsp.enable("clangd")
   end
 }

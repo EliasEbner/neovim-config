@@ -1,7 +1,7 @@
 require("config.lazy")
-require("config.tabs")
 require("config.numbers")
 require("config.keymaps")
 require("config.format-on-save")
 require("config.ignore-case")
 require("config.clipboard")
+require("config.tabs")
