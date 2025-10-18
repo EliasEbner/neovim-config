@@ -1,4 +1,4 @@
-return { -- language support
+return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		vim.lsp.config("*", {})
@@ -18,6 +18,7 @@ return { -- language support
       "ltex",
       "astro",
       "clangd",
+      "zls",
 		})
 
 	end,
