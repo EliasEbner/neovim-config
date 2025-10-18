@@ -40,5 +40,6 @@ vim.lsp.enable("ltex")
 vim.lsp.enable("astro")
 vim.lsp.enable("clangd")
 vim.lsp.enable("gopls")
+vim.lsp.enable("zls")
 -- Sometimes doesn't work if I need this I'll comment it out
 -- vim.lsp.enable("angularls")
