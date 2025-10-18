@@ -5,6 +5,7 @@ return {
       javascript = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      zig = { "zigfmt" },
       ["_"] = { "prettier" },
     }
   },
