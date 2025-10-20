@@ -1,12 +1,12 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
       javascript = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       zig = { "zigfmt" },
-      ["_"] = { "prettier" },
+      python = { "ruff_fix", "ruff_format", "ruff_organize_imports" }
     }
   },
 }
