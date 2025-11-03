@@ -18,6 +18,7 @@ return {
       "ltex",
       "astro",
       "clangd",
+      "angularls",
       "zls",
 		})
 
