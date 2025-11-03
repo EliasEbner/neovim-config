@@ -6,7 +6,8 @@ return {
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       zig = { "zigfmt" },
-      python = { "ruff_fix", "ruff_format", "ruff_organize_imports" }
+      python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+      rust = { "rustfmt" },
     }
   },
 }
