@@ -20,6 +20,7 @@ return {
       "clangd",
       "angularls",
       "zls",
+      "tinymist"
 		})
 
 	end,

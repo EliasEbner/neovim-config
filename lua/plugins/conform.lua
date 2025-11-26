@@ -8,6 +8,7 @@ return {
       zig = { "zigfmt" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       rust = { "rustfmt" },
+      c = { "clang-format" },
     }
   },
 }
