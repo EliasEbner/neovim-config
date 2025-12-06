@@ -20,7 +20,8 @@ return {
       "clangd",
       "angularls",
       "zls",
-      "tinymist"
+      "tinymist",
+      "wgsl_analyzer",
 		})
 
 	end,
