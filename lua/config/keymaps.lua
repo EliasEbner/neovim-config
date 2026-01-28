@@ -1,42 +1,42 @@
 -- TOGGLE SIDEBAR
 vim.keymap.set("n", "<space>s", require("sidebar-nvim").toggle, {
-  desc = "Toggle sidebar"
+  desc = "Toggle [s]idebar"
 })
 
 -- OPEN FILE EXPLORER
 vim.keymap.set("n", "<space>x", require("oil").open, {
-  desc = "Open file explorer"
+  desc = "Open file e[x]plorer"
 })
 
 -- TELESCOPE FIND FILES
 vim.keymap.set("n", "<space>f", require("telescope.builtin").find_files, {
-  desc = "Find files"
+  desc = "Find [f]iles"
 })
 
 ----------------------------- LSP -----------------------------
 -- GO TO DEFINITION
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
-  desc = "Go to definition"
+  desc = "[G]o to [d]efinition"
 })
 
 -- GO TO TYPE DEFINITION
 vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, {
-  desc = "Go to type definition"
+  desc = "[G]o to t[y]pe definition"
 })
 
 -- GO TO REFERENCES
 vim.keymap.set("n", "gr", vim.lsp.buf.references, {
-  desc = "Go to references"
+  desc = "[G]o to [r]eferences"
 })
 
 -- RENAME
 vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {
-  desc = "Rename symbol"
+  desc = "[R]e[n]ame symbol"
 })
 
 -- CODE ACTIONS
 vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, {
-  desc = "Show code actions"
+  desc = "Show code [a]ctions"
 })
 
 ----------------------------- HARPOON -----------------------------
@@ -44,21 +44,21 @@ vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, {
 vim.keymap.set("n", "<space>ha", function()
   require("harpoon"):list():add()
 end, {
-  desc = "Add current buffer to harpoon"
+  desc = "[A]dd current buffer to harpoon"
 })
 
 -- REMOVE FILE FROM HARPOON LIST
-vim.keymap.set("n", "<space>hd", function()
+vim.keymap.set("n", "<space>hr", function()
   require("harpoon"):list():remove()
 end, {
-  desc = "Remove current buffer from harpoon"
+  desc = "[R]emove current buffer from harpoon"
 })
 
 -- OPEN HARPOON LIST
 vim.keymap.set("n", "<space>hl", function()
   require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
 end, {
-  desc = "Open harpoon buffer list"
+  desc = "Open harpoon buffer [l]ist"
 })
 
 -- GO TO SPECIFIC LIST ITEMS
@@ -94,7 +94,7 @@ vim.keymap.set("n", "<space>d", function()
     scope = "cursor",
   })
 end, {
-  desc = "Show diagnostic floating window"
+  desc = "Show [d]iagnostic floating window"
 })
 
 
@@ -103,14 +103,14 @@ end, {
 vim.keymap.set("n", "do", function()
   vim.cmd("DiffviewOpen")
 end, {
-  desc = "Open diff view"
+  desc = "[O]pen diff view"
 })
 
 -- CLOSE DIFFVIEW
 vim.keymap.set("n", "dc", function()
   vim.cmd("DiffviewClose")
 end, {
-  desc = "Open diff view"
+  desc = "[C]lose diff view"
 })
 
 
@@ -123,27 +123,35 @@ vim.keymap.set("n", "<space>T", function()
     vim.treesitter.start()
   end
 end, {
-  desc = "Toggle treesitter highlighting"
+  desc = "Toggle [t]reesitter highlighting"
 })
 
 ----------------------------- TABBY -----------------------------
 -- RENAME TAB
-vim.keymap.set("n", "<space>tr", function()
-  vim.cmd("Tabby rename_tab")
-end)
+vim.keymap.set(
+  "n",
+  "<space>tr", ":Tabby rename_tab ",
+  { desc = "[R]ename the current tab" }
+)
 
 -- JUMP TO TAB
 vim.keymap.set("n", "<space>tj", function()
   vim.cmd("Tabby jump_to_tab")
-end)
+end, {
+  desc = "[J]ump to another tab"
+})
 
 -- PICK WINDOW
 vim.keymap.set("n", "<space>tw", function()
   vim.cmd("Tabby pick_window")
-end)
+end, {
+  desc = "Jump to another [w]indow"
+})
 
 ----------------------------- TABS -----------------------------
 -- CREATE NEW TAB
 vim.keymap.set("n", "<space>tn", function()
   vim.cmd("tabnew")
-end)
+end, {
+  desc = "Create a [n]ew tab"
+})
