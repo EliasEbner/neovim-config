@@ -116,12 +116,28 @@ end, {
 
 ----------------------------- TREESITTER -----------------------------
 -- TOGGLE HIGHLIGHTING
-vim.keymap.set("n", "<space>t", function()
+vim.keymap.set("n", "<space>T", function()
   if vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
     vim.treesitter.stop()
   else
     vim.treesitter.start()
   end
 end, {
-  desc = "Start treesitter highlighting"
+  desc = "Toggle treesitter highlighting"
 })
+
+----------------------------- TABBY -----------------------------
+-- RENAME TAB
+vim.keymap.set("n", "<space>tr", function()
+  vim.cmd("Tabby rename_tab")
+end)
+
+-- JUMP TO TAB
+vim.keymap.set("n", "<space>tj", function()
+  vim.cmd("Tabby jump_to_tab")
+end)
+
+-- PICK WINDOW
+vim.keymap.set("n", "<space>tw", function()
+  vim.cmd("Tabby pick_window")
+end)
