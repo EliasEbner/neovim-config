@@ -141,3 +141,9 @@ end)
 vim.keymap.set("n", "<space>tw", function()
   vim.cmd("Tabby pick_window")
 end)
+
+----------------------------- TABS -----------------------------
+-- CREATE NEW TAB
+vim.keymap.set("n", "<space>tn", function()
+  vim.cmd("tabnew")
+end)
