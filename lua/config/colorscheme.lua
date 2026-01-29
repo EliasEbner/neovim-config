@@ -1,5 +1,2 @@
--- CATPPUCCIN PASTEL COLORSCHEME
+-- CARBONFOX COLORSCHEME
 vim.cmd.colorscheme "carbonfox"
-vim.diagnostic.config({
-  underline = true,
-})
