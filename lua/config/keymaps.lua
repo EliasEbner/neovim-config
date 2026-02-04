@@ -24,6 +24,11 @@ vim.keymap.set({ "n", "v" }, "<C-e>", "j")
 vim.keymap.set({ "n", "v" }, "<C-i>", "k")
 vim.keymap.set({ "n", "v" }, "<C-o>", "l")
 
+vim.keymap.set({ "n", "v" }, "<C-h>", "n")
+vim.keymap.set({ "n", "v" }, "<C-j>", "e")
+vim.keymap.set({ "n", "v" }, "<C-k>", "i")
+vim.keymap.set({ "n", "v" }, "<C-l>", "o")
+
 
 -------------------------------------------------------------------
 
