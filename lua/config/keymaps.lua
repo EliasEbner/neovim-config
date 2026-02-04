@@ -1,3 +1,12 @@
+----------------------------- COLEMAK -----------------------------
+vim.keymap.set("n", "j", "h")
+vim.keymap.set("n", "k", "j")
+vim.keymap.set("n", "h", "k")
+
+
+-------------------------------------------------------------------
+
+
 -- TOGGLE SIDEBAR
 vim.keymap.set("n", "<space>s", require("sidebar-nvim").toggle, {
   desc = "Toggle [s]idebar"
