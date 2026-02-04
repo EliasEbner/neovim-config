@@ -19,15 +19,15 @@ vim.keymap.set({ "n", "v" }, "E", "J")
 vim.keymap.set({ "n", "v" }, "I", "K")
 vim.keymap.set({ "n", "v" }, "O", "L")
 
-vim.keymap.set({ "n", "v" }, "<C-n>", "h")
-vim.keymap.set({ "n", "v" }, "<C-e>", "j")
-vim.keymap.set({ "n", "v" }, "<C-i>", "k")
-vim.keymap.set({ "n", "v" }, "<C-o>", "l")
+vim.keymap.set({ "n", "v" }, "<C-n>", "<C-h>")
+vim.keymap.set({ "n", "v" }, "<C-e>", "<C-j>")
+vim.keymap.set({ "n", "v" }, "<C-i>", "<C-k>")
+vim.keymap.set({ "n", "v" }, "<C-o>", "<C-l>")
 
-vim.keymap.set({ "n", "v" }, "<C-h>", "n")
-vim.keymap.set({ "n", "v" }, "<C-j>", "e")
-vim.keymap.set({ "n", "v" }, "<C-k>", "i")
-vim.keymap.set({ "n", "v" }, "<C-l>", "o")
+vim.keymap.set({ "n", "v" }, "<C-h>", "<C-n>")
+vim.keymap.set({ "n", "v" }, "<C-j>", "<C-e>")
+vim.keymap.set({ "n", "v" }, "<C-k>", "<C-i>")
+vim.keymap.set({ "n", "v" }, "<C-l>", "<C-o>")
 
 
 -------------------------------------------------------------------
