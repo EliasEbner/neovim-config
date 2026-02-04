@@ -1,7 +1,23 @@
 ----------------------------- COLEMAK -----------------------------
-vim.keymap.set("n", "j", "h")
-vim.keymap.set("n", "k", "j")
-vim.keymap.set("n", "h", "k")
+vim.keymap.set({ "n", "v" }, "h", "o")
+vim.keymap.set({ "n", "v" }, "j", "n")
+vim.keymap.set({ "n", "v" }, "k", "i")
+vim.keymap.set({ "n", "v" }, "l", "e")
+
+vim.keymap.set({ "n", "v" }, "H", "O")
+vim.keymap.set({ "n", "v" }, "J", "N")
+vim.keymap.set({ "n", "v" }, "K", "I")
+vim.keymap.set({ "n", "v" }, "L", "E")
+
+vim.keymap.set({ "n", "v" }, "n", "h")
+vim.keymap.set({ "n", "v" }, "e", "j")
+vim.keymap.set({ "n", "v" }, "i", "k")
+vim.keymap.set({ "n", "v" }, "o", "l")
+
+vim.keymap.set({ "n", "v" }, "N", "H")
+vim.keymap.set({ "n", "v" }, "E", "J")
+vim.keymap.set({ "n", "v" }, "I", "K")
+vim.keymap.set({ "n", "v" }, "O", "L")
 
 
 -------------------------------------------------------------------
