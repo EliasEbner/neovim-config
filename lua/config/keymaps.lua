@@ -20,14 +20,9 @@ vim.keymap.set({ "n", "v" }, "I", "K")
 vim.keymap.set({ "n", "v" }, "O", "L")
 
 vim.keymap.set({ "n", "v" }, "<C-n>", "<C-h>")
-vim.keymap.set({ "n", "v" }, "<C-e>", "<C-j>")
+vim.keymap.set({ "n", "v" }, "<C-e>", vim.lsp.buf.hover)
 vim.keymap.set({ "n", "v" }, "<C-i>", "<C-k>")
 vim.keymap.set({ "n", "v" }, "<C-o>", "<C-l>")
-
-vim.keymap.set({ "n", "v" }, "<C-h>", "<C-n>")
-vim.keymap.set({ "n", "v" }, "<C-j>", "<C-e>")
-vim.keymap.set({ "n", "v" }, "<C-k>", "<C-i>")
-vim.keymap.set({ "n", "v" }, "<C-l>", "<C-o>")
 
 
 -------------------------------------------------------------------
