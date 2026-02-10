@@ -18,7 +18,7 @@ return {
       "ltex",
       "astro",
       "clangd",
-      "angularls",
+      -- "angularls",
       "zls",
       "tinymist",
       "wgsl_analyzer",
