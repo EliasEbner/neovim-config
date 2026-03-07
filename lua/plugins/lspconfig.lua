@@ -22,6 +22,7 @@ return {
       "zls",
       "tinymist",
       "wgsl_analyzer",
+      "c3_lsp",
 		})
 
 	end,
