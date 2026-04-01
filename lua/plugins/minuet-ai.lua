@@ -9,7 +9,7 @@ return {
         provider = "openai_fim_compatible",
         provider_options = {
           openai_fim_compatible = {
-            api_key = "OLLAMA_API_KEY",
+            api_key = "TERM",
             name = 'Ollama',
             end_point = 'http://localhost:11434/v1/completions',
             model = 'qwen2.5-coder:7b',
