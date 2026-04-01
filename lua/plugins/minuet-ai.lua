@@ -22,7 +22,14 @@ return {
         n_completions = 1,
         context_window = 512,
         virtualtext = {
-          auto_trigger_ft = { "c", "zig", "tsx", "ts", "cpp", "js", "jsx" },
+          auto_trigger_ft = {
+            "c",
+            "zig",
+            "typescriptreact",
+            "ts",
+            "cpp",
+            "js",
+          },
           keymap = {
             -- accept whole completion
             accept = '<C-g>',
