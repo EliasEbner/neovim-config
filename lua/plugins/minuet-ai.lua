@@ -26,9 +26,8 @@ return {
             "c",
             "zig",
             "typescriptreact",
-            "ts",
+            "typescript",
             "cpp",
-            "js",
           },
           keymap = {
             -- accept whole completion
