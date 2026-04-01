@@ -1,7 +1,7 @@
 return {
   "sidebar-nvim/sidebar.nvim",
   opts = {
-    open = true,
+    open = false,
     sections = { "datetime", "files", "diagnostics" },
     -- git wasn't always working for some reason and sometimes threw an error
     -- sections = { "datetime", "files", "diagnostics", "git" },
