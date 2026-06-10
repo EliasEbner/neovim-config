@@ -25,7 +25,17 @@ vim.lsp.enable({
 
 vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
-end);
+end)
+
+-- accept completion on enter, not on <C-y>
+vim.keymap.set('i', '<Enter>', function()
+    if vim.fn.pumvisible() ~= 0 then
+        return '<C-y>'
+    end
+
+    return '<Enter>'
+end, { expr = true, noremap = true })
+
 
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -33,7 +43,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
-        -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
         if client:supports_method('textDocument/completion') then
             local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
             client.server_capabilities.completionProvider.triggerCharacters = chars
@@ -47,6 +56,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
                 buffer = ev.buf,
                 callback = function()
+                    local file_name = vim.api.nvim_buf_get_name(ev.buf)
                     vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
                 end,
             })
