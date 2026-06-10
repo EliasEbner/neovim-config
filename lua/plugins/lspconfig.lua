@@ -22,3 +22,7 @@ vim.lsp.enable({
 	'wgsl_analyzer',
 	'c3_lsp',
 })
+
+vim.keymap.set('i', '<C-space>', function()
+    vim.lsp.completion.get()
+end);
