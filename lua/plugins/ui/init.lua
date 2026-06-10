@@ -1,1 +1,9 @@
-return { import = "plugins.ui" }
+require('plugins.ui.catppuccin')
+require('plugins.ui.gruvbox')
+require('plugins.ui.lualine')
+require('plugins.ui.neoscroll')
+require('plugins.ui.nightfox')
+require('plugins.ui.no-neck-pain')
+require('plugins.ui.outline')
+require('plugins.ui.sidebar')
+require('plugins.ui.tabby')

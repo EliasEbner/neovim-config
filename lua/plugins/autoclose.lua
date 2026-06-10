@@ -1,1 +1,2 @@
-return { 'm4xshen/autoclose.nvim', opts = {} }
+vim.pack.add { 'https://github.com/m4xshen/autoclose.nvim' }
+require('autoclose').setup()

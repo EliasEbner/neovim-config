@@ -1,18 +1,3 @@
--- TOGGLE SIDEBAR
-vim.keymap.set("n", "<space>s", require("sidebar-nvim").toggle, {
-  desc = "Toggle [s]idebar"
-})
-
--- OPEN FILE EXPLORER
-vim.keymap.set("n", "<space>x", require("oil").open, {
-  desc = "Open file e[x]plorer"
-})
-
--- TELESCOPE FIND FILES
-vim.keymap.set("n", "<space>f", require("telescope.builtin").find_files, {
-  desc = "Find [f]iles"
-})
-
 ----------------------------- LSP -----------------------------
 -- GO TO DEFINITION
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
@@ -37,50 +22,6 @@ vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {
 -- CODE ACTIONS
 vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, {
   desc = "Show code [a]ctions"
-})
-
------------------------------ HARPOON -----------------------------
--- ADD FILE TO HARPOON LIST
-vim.keymap.set("n", "<space>ha", function()
-  require("harpoon"):list():add()
-end, {
-  desc = "[A]dd current buffer to harpoon"
-})
-
--- REMOVE FILE FROM HARPOON LIST
-vim.keymap.set("n", "<space>hr", function()
-  require("harpoon"):list():remove()
-end, {
-  desc = "[R]emove current buffer from harpoon"
-})
-
--- OPEN HARPOON LIST
-vim.keymap.set("n", "<space>hl", function()
-  require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-end, {
-  desc = "Open harpoon buffer [l]ist"
-})
-
--- GO TO SPECIFIC LIST ITEMS
-vim.keymap.set("n", "<space>hh", function()
-  require("harpoon"):list():select(1)
-end, {
-  desc = "Open first element in harpoon buffer list"
-})
-vim.keymap.set("n", "<space>ht", function()
-  require("harpoon"):list():select(2)
-end, {
-  desc = "Open second element in harpoon buffer list"
-})
-vim.keymap.set("n", "<space>hn", function()
-  require("harpoon"):list():select(3)
-end, {
-  desc = "Open third element in harpoon buffer list"
-})
-vim.keymap.set("n", "<space>hs", function()
-  require("harpoon"):list():select(4)
-end, {
-  desc = "Open fourth element in harpoon list"
 })
 
 ----------------------------- DIAGNOSTICS -----------------------------

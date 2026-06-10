@@ -1,1 +1,1 @@
-return { 'sindrets/diffview.nvim', opts = {} }
+vim.pack.add { 'https://github.com/sindrets/diffview.nvim' }

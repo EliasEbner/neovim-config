@@ -1,7 +1,2 @@
-return {
-    "morhetz/gruvbox",
-    config = function()
-        vim.cmd.colorscheme("gruvbox")
-    end
-}
-
+vim.pack.add { 'https://github.com/ellisonleao/gruvbox.nvim' }
+require('gruvbox').setup()

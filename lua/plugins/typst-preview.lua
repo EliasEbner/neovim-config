@@ -1,5 +1,2 @@
-return {
-  "chomosuke/typst-preview.nvim",
-  lazy = false, -- or ft = 'typst'
-  opts = {},
-}
+vim.pack.add { 'https://github.com/chomosuke/typst-preview.nvim' }
+require('typst-preview').setup()

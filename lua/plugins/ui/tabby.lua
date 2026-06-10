@@ -1,4 +1,1 @@
-return {
-    "nanozuki/tabby.nvim",
-    opts = {}
-}
+vim.pack.add { 'https://github.com/nanozuki/tabby.nvim' }

@@ -1,8 +1,10 @@
-return { "EdenEast/nightfox.nvim", name="nightfox", priority = 1000, opts={
+vim.pack.add { 'https://github.com/EdenEast/nightfox.nvim' }
+
+require('nightfox').setup {
   groups = {
     all = {
-      DiagnosticUnderlineError = { style = "underline,bold" },
-      DiagnosticUnderlineWarn = { style = "underline" },
+      DiagnosticUnderlineError = { style = 'underline,bold' },
+      DiagnosticUnderlineWarn = { style = 'underline' },
     }
   }
-}}
+}
