@@ -56,8 +56,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
                 buffer = ev.buf,
                 callback = function()
-                    local file_name = vim.api.nvim_buf_get_name(ev.buf)
-                    vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
+                    -- do not format .c and .h files
+                    local filetype = vim.bo[ev.buf].filetype
+                    if filetype == 'c' then
+                        return
+                    end
+
+                    vim.lsp.buf.format({
+                        bufnr = ev.buf,
+                        id = client.id,
+                        timeout_ms = 1000
+                    })
                 end,
             })
         end
