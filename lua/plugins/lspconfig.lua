@@ -2,7 +2,7 @@ vim.pack.add { 'https://github.com/neovim/nvim-lspconfig' }
 vim.lsp.config('*', {})
 vim.lsp.enable({
 	'gopls',
-	'tailwindcss',
+	'tailwindCSS',
 	'jdtls',
 	'kotlin_language_server',
 	'lua_ls',
