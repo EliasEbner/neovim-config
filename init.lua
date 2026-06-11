@@ -1,7 +1,6 @@
 require("plugins")
 require("numbers")
 require("keymaps")
-require("format-on-save")
 require("ignore-case")
 require("clipboard")
 require("miscellaneous")
