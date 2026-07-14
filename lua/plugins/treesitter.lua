@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd('FileType', {
         'typescript',
         'c3',
         'rust',
+        'odin',
     },
     callback = function()
         vim.treesitter.start()
