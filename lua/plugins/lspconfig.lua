@@ -57,9 +57,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
                 buffer = ev.buf,
                 callback = function()
-                    -- do not format .c, .h, and .odin files
+                    -- do not format .c and .h files
                     local filetype = vim.bo[ev.buf].filetype
-                    if filetype == 'c' or filetype == 'odin' then
+                    if filetype == 'c' then
                         return
                     end
 
